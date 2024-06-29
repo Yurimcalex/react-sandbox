@@ -3,6 +3,7 @@ import MyButton from './MyButton.jsx';
 import CommonGreeting from './CommonGreeting.jsx';
 import TennisPlayer from './TennisPlayer.jsx';
 import Question from './Question.jsx';
+import Cars from './Cars.jsx';
 
 export default function QS() {
 	return (
@@ -11,7 +12,7 @@ export default function QS() {
 			<MyButton />
 			<CommonGreeting />
 			<TennisPlayer />
-			<Question />
+			<Cars />
 		</div>
 	);
 }
