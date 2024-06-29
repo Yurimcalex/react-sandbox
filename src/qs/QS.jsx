@@ -6,6 +6,7 @@ import Question from './Question.jsx';
 import Cars from './Cars.jsx';
 import LogButton from './LogButton.jsx';
 import CounterButton from './CounterButton.jsx';
+import SyncButtons from './SyncButtons.jsx';
 
 export default function QS() {
 	return (
@@ -22,6 +23,7 @@ export default function QS() {
 				<CounterButton />
 				<CounterButton />
 			</div>
+			<SyncButtons />
 		</div>
 	);
 }
