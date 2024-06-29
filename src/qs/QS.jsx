@@ -5,6 +5,7 @@ import TennisPlayer from './TennisPlayer.jsx';
 import Question from './Question.jsx';
 import Cars from './Cars.jsx';
 import LogButton from './LogButton.jsx';
+import CounterButton from './CounterButton.jsx';
 
 export default function QS() {
 	return (
@@ -16,6 +17,10 @@ export default function QS() {
 			<Cars />
 			<div>
 				<LogButton />
+			</div>
+			<div>
+				<CounterButton />
+				<CounterButton />
 			</div>
 		</div>
 	);
