@@ -1,9 +1,10 @@
 import './App.css';
+import QS from './qs/qs.jsx';
 
 const App = () => {
   return (
     <div>
-      OK
+      <QS />
     </div>
   );
 };
