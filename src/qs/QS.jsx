@@ -4,6 +4,7 @@ import CommonGreeting from './CommonGreeting.jsx';
 import TennisPlayer from './TennisPlayer.jsx';
 import Question from './Question.jsx';
 import Cars from './Cars.jsx';
+import LogButton from './LogButton.jsx';
 
 export default function QS() {
 	return (
@@ -13,6 +14,9 @@ export default function QS() {
 			<CommonGreeting />
 			<TennisPlayer />
 			<Cars />
+			<div>
+				<LogButton />
+			</div>
 		</div>
 	);
 }
