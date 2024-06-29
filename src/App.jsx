@@ -1,5 +1,5 @@
 import './App.css';
-import QS from './qs/qs.jsx';
+import QS from './qs/QS.jsx';
 
 const App = () => {
   return (
