@@ -1,9 +1,10 @@
-export default function ShoppingCart({ products }) {
+export default function ShoppingCart({ products, onRemoveProduct }) {
 	const rows = products.map((product, ind) => (
 		<tr key={ind}>
 			<td>{product.name}</td>
 			<td>1</td>
 			<td>{product.price}</td>
+			<td onClick={() => onRemoveProduct(product)}>[x]</td>
 		</tr>
 	));
 
