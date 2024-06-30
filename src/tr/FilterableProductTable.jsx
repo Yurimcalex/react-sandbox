@@ -9,7 +9,16 @@ export default function FilterableProductTable({ products }) {
 	const [isStockOnly, setIsStockOnly] = useState(false);
 
 	const [selectedProducts, setSelectedProducts] = useState([]);
-	const onSelectProduct = (product) => setSelectedProducts([...selectedProducts, product]); 
+	const onSelectProduct = (product) => setSelectedProducts([...selectedProducts, product]);
+
+	const onRemoveProduct = (product) => {
+		const productInd = selectedProducts.findIndex(p => p.name === product.name);
+		const updatedProducts = [
+			...selectedProducts.slice(0, productInd),
+			...selectedProducts.slice(productInd + 1)
+		]; 
+		setSelectedProducts(updatedProducts);
+	};
 
 	return (
 		<div>
@@ -25,7 +34,10 @@ export default function FilterableProductTable({ products }) {
 				isStockOnly={isStockOnly}
 				onSelectProduct={onSelectProduct}
 			/>
-			<ShoppingCart products={selectedProducts} />
+			<ShoppingCart 
+				products={selectedProducts}
+				onRemoveProduct={onRemoveProduct}
+			/>
 			<TotalList products={selectedProducts} />
 		</div>
 	);
