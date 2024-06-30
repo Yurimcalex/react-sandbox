@@ -1,3 +1,6 @@
+import ProductCategoryRow from './ProductCategoryRow.jsx';
+import ProductRow from './ProductRow.jsx';
+
 export default function ProductTable({ products }) {
 	const rows = [];
 	let lastCategory = null;
@@ -29,7 +32,7 @@ export default function ProductTable({ products }) {
 					<th>Name</th>
 					<th>Price</th>
 				</tr>
-			<thead>
+			</thead>
 			<tbody>{rows}</tbody>
 		</table>
 	);
