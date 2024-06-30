@@ -1,7 +1,7 @@
 import ProductCategoryRow from './ProductCategoryRow.jsx';
 import ProductRow from './ProductRow.jsx';
 
-export default function ProductTable({ products, filterText, isStockOnly }) {
+export default function ProductTable({ products, filterText, isStockOnly, onSelectProduct }) {
 	const rows = [];
 	let lastCategory = null;
 
@@ -27,6 +27,7 @@ export default function ProductTable({ products, filterText, isStockOnly }) {
 		rows.push(
 			<ProductRow 
 				product={product}
+				onSelectProduct={onSelectProduct}
 				key={product.name}
 			/>
 		);
