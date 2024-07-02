@@ -1,4 +1,5 @@
 import Animal from './Animal.jsx';
+import NotesList from './NotesList.jsx';
 
 export default function DU() {
 	return (
@@ -22,6 +23,16 @@ export default function DU() {
 					food: ['oranges']
 				}}
 			/>
+
+			<div>
+				<NotesList 
+					notes={['one', 'two']}
+				/>
+				<NotesList
+					notes={['Hello', 'Hi', 'Greeting']}
+					isList={false}
+				/>
+			</div>
 		</div>
 	);
 }
