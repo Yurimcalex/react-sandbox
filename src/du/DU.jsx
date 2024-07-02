@@ -1,5 +1,6 @@
 import Animal from './Animal.jsx';
 import NotesList from './NotesList.jsx';
+import FancyBorder from './FancyBorder.jsx';
 
 export default function DU() {
 	return (
@@ -33,6 +34,10 @@ export default function DU() {
 					isList={false}
 				/>
 			</div>
+
+			<FancyBorder>
+				<p>Some content</p>
+			</FancyBorder>
 		</div>
 	);
 }
