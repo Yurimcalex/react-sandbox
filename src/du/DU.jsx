@@ -2,6 +2,7 @@ import Animal from './Animal.jsx';
 import NotesList from './NotesList.jsx';
 import FancyBorder from './FancyBorder.jsx';
 import FancyBackground from './FancyBackground.jsx';
+import ShoppingList from './ShoppingList.jsx';
 
 export default function DU() {
 	return (
@@ -40,9 +41,16 @@ export default function DU() {
 				<p>Some content</p>
 			</FancyBorder>
 
-			<FancyBackground>
+			{/*<FancyBackground>
 				<p>What is that?</p>
-			</FancyBackground>
+			</FancyBackground>*/}
+
+			<ShoppingList
+				list={[
+					{name: 'Soda', isUrgent: true},
+					{name: 'Chips', purchased: true}
+				]}
+			/>
 		</div>
 	);
 }
