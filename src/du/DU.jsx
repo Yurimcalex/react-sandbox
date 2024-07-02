@@ -47,8 +47,9 @@ export default function DU() {
 
 			<ShoppingList
 				list={[
-					{name: 'Soda', isUrgent: true},
-					{name: 'Chips', purchased: true}
+					{name: 'Soda', isUrgent: true, purchased: true},
+					{name: 'Chips', purchased: true},
+					{name: 'Bread', purchased: true}
 				]}
 			/>
 		</div>
