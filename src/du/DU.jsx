@@ -1,6 +1,7 @@
 import Animal from './Animal.jsx';
 import NotesList from './NotesList.jsx';
 import FancyBorder from './FancyBorder.jsx';
+import FancyBackground from './FancyBackground.jsx';
 
 export default function DU() {
 	return (
@@ -38,6 +39,10 @@ export default function DU() {
 			<FancyBorder>
 				<p>Some content</p>
 			</FancyBorder>
+
+			<FancyBackground>
+				<p>What is that?</p>
+			</FancyBackground>
 		</div>
 	);
 }
