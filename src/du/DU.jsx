@@ -3,6 +3,7 @@ import NotesList from './NotesList.jsx';
 import FancyBorder from './FancyBorder.jsx';
 import FancyBackground from './FancyBackground.jsx';
 import ShoppingList from './ShoppingList.jsx';
+import ScientistList from './ScientistList';
 
 export default function DU() {
 	return (
@@ -52,6 +53,8 @@ export default function DU() {
 					{name: 'Bread', purchased: true}
 				]}
 			/>
+
+			<ScientistList />
 		</div>
 	);
 }
