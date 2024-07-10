@@ -4,6 +4,7 @@ import FancyBorder from './FancyBorder.jsx';
 import FancyBackground from './FancyBackground.jsx';
 import ShoppingList from './ShoppingList.jsx';
 import ScientistList from './ScientistList';
+import Tree from './Tree.jsx';
 
 export default function DU() {
 	return (
@@ -55,6 +56,8 @@ export default function DU() {
 			/>
 
 			<ScientistList />
+
+			<Tree />
 		</div>
 	);
 }
