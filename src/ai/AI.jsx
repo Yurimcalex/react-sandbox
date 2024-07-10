@@ -1,5 +1,6 @@
 import Message from './Message.jsx';
 import Button from './Button.jsx';
+import Controls from './Controls.jsx';
 
 export default function AI() {
 	return (
@@ -9,6 +10,7 @@ export default function AI() {
 				<Button text={"Some interesting text..."} />
 				<Button text={"Another interesting text..."} />
 			</div>
+			<Controls />
 		</div>
 	);
 }
