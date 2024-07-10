@@ -36,7 +36,9 @@ export const people = [{
 export default function ScientistList() {
 	const [profession, setProfession] = useState(people[0].profession);
 
-	const options = people.map(person => <option key={person.id}>{person.profession}</option>);
+	let options = people.map(person => person.profession);
+	options = Array.from(new Set(options)).map(item => <option key={item}>{item}</option>);
+
 	const allListItems = people.map(person => <li key={person.id}>{person.name}</li>);
 	const filteredListItems = people
 		.filter(person => person.profession === profession)
