@@ -8,5 +8,12 @@ export default function Toolbar({ onPlaySong, onTurnOffLight }) {
 }
 
 function Button({ onClick, children }) {
-	return <button onClick={onClick}>{children}</button>;
+	return (
+		<button onClick={(e) => {
+			e.stopPropagation();
+			onClick();
+		}}>
+			{children}
+		</button>
+	);
 }
