@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 export const people = [{
   id: 0,
   name: 'Creola Katherine Johnson',
@@ -32,10 +34,26 @@ export const people = [{
 
 
 export default function ScientistList() {
-	const listItems = people.map(person => <li key={person.id}>{person.name}</li>);
+	const [profession, setProfession] = useState(people[0].profession);
+
+	const options = people.map(person => <option key={person.id}>{person.profession}</option>);
+	const allListItems = people.map(person => <li key={person.id}>{person.name}</li>);
+	const filteredListItems = people
+		.filter(person => person.profession === profession)
+		.map(person => <li key={person.id}>{person.name}</li>);
+
+	const onProfessionChanged = (e) => setProfession(e.target.value);
+
 	return (
 		<div>
-			<ul>{listItems}</ul>
+			<ul>{allListItems}</ul>
+			<div>
+				<h3>Scientist by profession</h3>
+				<ul>
+					{filteredListItems}
+				</ul>
+			</div>
+			<select value={profession} onChange={onProfessionChanged}>{options}</select>
 		</div>
 	);
 }
