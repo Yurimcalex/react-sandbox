@@ -30,6 +30,13 @@ export default function ExperimentalCounter() {
 		setCounter(n => n + 3);
 	};
 
+	const handleClick5 = () => {
+		setCounter(counter + 4);
+		setCounter(n => n + 3);
+		setCounter(0);
+	};
+
+
 	return (
 		<div>
 			<button onClick={handleClick}>Counter {counter}</button>
@@ -37,6 +44,7 @@ export default function ExperimentalCounter() {
 			<button onClick={handleClick2}>Timer 3sec</button>
 			<button onClick={handleClick3}>+2</button>
 			<button onClick={handleClick4}>+7</button>
+			<button onClick={handleClick5}>Reset</button>
 		</div>
 	);
 }
