@@ -7,6 +7,7 @@ import ParentAdditionalTask from './ParentAdditionalTask.jsx';
 import EmptyForm from './EmptyForm.jsx';
 import PhraseGallery from './PhraseGallery.jsx';
 import CounterWithInput from './CounterWithInput.jsx';
+import ExperimentalCounter from './ExperimentalCounter.jsx';
 
 export default function AI() {
 	return (
@@ -29,6 +30,7 @@ export default function AI() {
 
 			<PhraseGallery />
 			<CounterWithInput />
+			<ExperimentalCounter />
 		</div>
 	);
 }
