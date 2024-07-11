@@ -13,10 +13,18 @@ export default function ExperimentalCounter() {
 		setCounter(counter + 1);
 	};
 
+	const handleClick2 = () => {
+		setCounter(counter + 1);
+		setTimeout(() => {
+			console.log(counter);
+		}, 3000);
+	};
+
 	return (
 		<div>
 			<button onClick={handleClick}>Counter {counter}</button>
 			<button onClick={handleClick1}>Blocking click!</button>
+			<button onClick={handleClick2}>Timer 3sec</button>
 		</div>
 	);
 }
