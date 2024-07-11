@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 const data = [
 	{ id: 1, text: 'Hello' },
 	{ id: 2, text: 'Hi', },
@@ -5,9 +7,11 @@ const data = [
 ];
 
 export default function PhraseGallery() {
-	let ind = 0;
+	const [ind, setInd] = useState(0);
 
-	const handleClick = () => ind = ind + 1;
+	const handleClick = () => {
+		if (ind < data.length - 1) setInd(ind + 1);
+	};
 
 	return (
 		<div>
