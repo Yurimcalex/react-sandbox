@@ -3,6 +3,7 @@ import Button from './Button.jsx';
 import Controls from './Controls.jsx';
 import Toolbar from './Toolbar.jsx';
 import ClickCatcher from './ClickCatcher.jsx';
+import ParentAdditionalTask from './ParentAdditionalTask.jsx';
 
 export default function AI() {
 	return (
@@ -19,6 +20,8 @@ export default function AI() {
 					onTurnOffLight={() => console.log('the light is turned off')}
 				/>
 			</ClickCatcher>
+
+			<ParentAdditionalTask />
 		</div>
 	);
 }
