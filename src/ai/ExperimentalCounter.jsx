@@ -8,7 +8,15 @@ export default function ExperimentalCounter() {
 		setCounter(counter + 1);
 	};
 
+	const handleClick1 = () => {
+		alert(counter);
+		setCounter(counter + 1);
+	};
+
 	return (
-		<button onClick={handleClick}>Counter {counter}</button>
+		<div>
+			<button onClick={handleClick}>Counter {counter}</button>
+			<button onClick={handleClick1}>Blocking click!</button>
+		</div>
 	);
 }
