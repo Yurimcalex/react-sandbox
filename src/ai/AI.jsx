@@ -5,6 +5,7 @@ import Toolbar from './Toolbar.jsx';
 import ClickCatcher from './ClickCatcher.jsx';
 import ParentAdditionalTask from './ParentAdditionalTask.jsx';
 import EmptyForm from './EmptyForm.jsx';
+import PhraseGallery from './PhraseGallery.jsx';
 
 export default function AI() {
 	return (
@@ -24,6 +25,8 @@ export default function AI() {
 
 			<ParentAdditionalTask />
 			<EmptyForm />
+
+			<PhraseGallery />
 		</div>
 	);
 }
