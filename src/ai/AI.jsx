@@ -4,6 +4,7 @@ import Controls from './Controls.jsx';
 import Toolbar from './Toolbar.jsx';
 import ClickCatcher from './ClickCatcher.jsx';
 import ParentAdditionalTask from './ParentAdditionalTask.jsx';
+import EmptyForm from './EmptyForm.jsx';
 
 export default function AI() {
 	return (
@@ -22,6 +23,7 @@ export default function AI() {
 			</ClickCatcher>
 
 			<ParentAdditionalTask />
+			<EmptyForm />
 		</div>
 	);
 }
