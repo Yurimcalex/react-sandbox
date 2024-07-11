@@ -20,11 +20,17 @@ export default function ExperimentalCounter() {
 		}, 3000);
 	};
 
+	const handleClick3 = () => {
+		setCounter(n => n + 1);
+		setCounter(n => n + 1);
+	};
+
 	return (
 		<div>
 			<button onClick={handleClick}>Counter {counter}</button>
 			<button onClick={handleClick1}>Blocking click!</button>
 			<button onClick={handleClick2}>Timer 3sec</button>
+			<button onClick={handleClick3}>+2</button>
 		</div>
 	);
 }
