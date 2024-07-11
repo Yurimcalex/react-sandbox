@@ -9,6 +9,7 @@ import PhraseGallery from './PhraseGallery.jsx';
 import CounterWithInput from './CounterWithInput.jsx';
 import ExperimentalCounter from './ExperimentalCounter.jsx';
 import FormWithDelay from './FormWithDelay.jsx';
+import FavoriteCarForm from './FavoriteCarForm.jsx';
 
 export default function AI() {
 	return (
@@ -34,6 +35,7 @@ export default function AI() {
 			<ExperimentalCounter />
 
 			<FormWithDelay />
+			<FavoriteCarForm />
 		</div>
 	);
 }
