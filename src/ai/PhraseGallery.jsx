@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 const data = [
-	{ id: 1, text: 'Hello' },
-	{ id: 2, text: 'Hi', },
-	{ id: 3, text: 'Greeting' }
+	{ id: 1, text: 'Hello', author: 'Bob' },
+	{ id: 2, text: 'Hi', author: 'Mark' },
+	{ id: 3, text: 'Greeting', author: 'Anna' }
 ];
 
 export default function PhraseGallery() {
