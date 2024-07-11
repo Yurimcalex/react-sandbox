@@ -6,6 +6,7 @@ import ClickCatcher from './ClickCatcher.jsx';
 import ParentAdditionalTask from './ParentAdditionalTask.jsx';
 import EmptyForm from './EmptyForm.jsx';
 import PhraseGallery from './PhraseGallery.jsx';
+import CounterWithInput from './CounterWithInput.jsx';
 
 export default function AI() {
 	return (
@@ -27,6 +28,7 @@ export default function AI() {
 			<EmptyForm />
 
 			<PhraseGallery />
+			<CounterWithInput />
 		</div>
 	);
 }
