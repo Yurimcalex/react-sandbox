@@ -25,12 +25,18 @@ export default function ExperimentalCounter() {
 		setCounter(n => n + 1);
 	};
 
+	const handleClick4 = () => {
+		setCounter(counter + 4);
+		setCounter(n => n + 3);
+	};
+
 	return (
 		<div>
 			<button onClick={handleClick}>Counter {counter}</button>
 			<button onClick={handleClick1}>Blocking click!</button>
 			<button onClick={handleClick2}>Timer 3sec</button>
 			<button onClick={handleClick3}>+2</button>
+			<button onClick={handleClick4}>+7</button>
 		</div>
 	);
 }
