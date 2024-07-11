@@ -10,13 +10,22 @@ export default function PhraseGallery() {
 	const [ind, setInd] = useState(0);
 	const [showAuthor, setShowAuthor] = useState(false);
 
-	const handleClick = () => setInd(ind + 1);
+	const handleNextClick = () => setInd(ind + 1);
+	const handlePrevClick = () => setInd(ind - 1);
 
 	return (
 		<div>
 			<p>{data[ind].text}</p>
+			
 			<button 
-				onClick={handleClick}
+				onClick={handlePrevClick}
+				disabled={ind === 0}
+			>
+				Prev
+			</button>
+
+			<button 
+				onClick={handleNextClick}
 				disabled={ind === data.length - 1}
 			>
 				Next
