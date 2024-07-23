@@ -4,10 +4,22 @@ export default function EmployeeForm() {
 	const [employee, setEmployee]	= useState({
 		firstName: 'Sarah',
 		lastName: 'Blinkovich',
-		skills: 'I can sing!'
+		skills: 'I can sing!',
+		hobbii: {
+			name: 'Knitting',
+			duration: 3
+		}
 	});
 
 	const handleFieldChange = (e) => setEmployee({ ...employee, [e.target.name]: e.target.value });
+
+	const handleHobbiiChange = (e) => setEmployee({
+		...employee,
+		hobbii: {
+			...employee.hobbii,
+			name: e.target.value
+		}
+	});
 
 	return (
 		<form>
@@ -22,11 +34,15 @@ export default function EmployeeForm() {
 			</label>
 			<br/>
 			<label>
-				Skills
+				Skills:
 				<input type="text" name="skills" value={employee.skills} onChange={handleFieldChange} />
 			</label>
+			<label>
+				Hobbii: 
+				<input type="text" value={employee.hobbii.name} onChange={handleHobbiiChange} />
+			</label>
 			<div>
-				{employee.firstName} {employee.lastName} {employee.skills}
+				{employee.firstName} {employee.lastName} {employee.skills} {employee.hobbii.name}
 			</div>
 		</form>
 	);
