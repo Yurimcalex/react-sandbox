@@ -7,25 +7,23 @@ export default function EmployeeForm() {
 		skills: 'I can sing!'
 	});
 
-	const handleFirstNameChange = (e) => setEmployee({ ...employee, firstName: e.target.value });
-	const handleLastNameChange = (e) => setEmployee({ ...employee, lastName: e.target.value });
-	const handleSkillsChange = (e) => setEmployee({ ...employee, skills: e.target.value });
+	const handleFieldChange = (e) => setEmployee({ ...employee, [e.target.name]: e.target.value });
 
 	return (
 		<form>
 			<label>
 				First Name: 
-				<input type="text" value={employee.firstName} onChange={handleFirstNameChange} />
+				<input type="text" name="firstName" value={employee.firstName} onChange={handleFieldChange} />
 			</label>
 			<br/>
 			<label>
 				Last name:
-				<input type="text" value={employee.lastName} onChange={handleLastNameChange} />
+				<input type="text" name="lastName" value={employee.lastName} onChange={handleFieldChange} />
 			</label>
 			<br/>
 			<label>
 				Skills
-				<input type="text" value={employee.skills} onChange={handleSkillsChange} />
+				<input type="text" name="skills" value={employee.skills} onChange={handleFieldChange} />
 			</label>
 			<div>
 				{employee.firstName} {employee.lastName} {employee.skills}
