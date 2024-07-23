@@ -10,6 +10,7 @@ import CounterWithInput from './CounterWithInput.jsx';
 import ExperimentalCounter from './ExperimentalCounter.jsx';
 import FormWithDelay from './FormWithDelay.jsx';
 import FavoriteCarForm from './FavoriteCarForm.jsx';
+import MovingSquare from './MovingSquare.jsx';
 
 export default function AI() {
 	return (
@@ -36,6 +37,8 @@ export default function AI() {
 
 			<FormWithDelay />
 			<FavoriteCarForm />
+
+			<MovingSquare />
 		</div>
 	);
 }
