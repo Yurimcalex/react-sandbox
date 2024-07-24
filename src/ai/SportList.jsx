@@ -29,6 +29,10 @@ export default function SportList() {
 		setSports(sports.filter(sport => sport.id !== id));
 	};
 
+	const handleListReverse = () => {
+		setSports([...sports].reverse());
+	};
+
 	return (
 		<div>
 			<div>
@@ -37,6 +41,7 @@ export default function SportList() {
 				</label>
 				<button onClick={handleAddSport}>Add</button>
 				<button onClick={handleAddAtPos1}>Add at position 1</button>
+				<button onClick={handleListReverse}>Reverse</button>
 			</div>
 			<ul>
 				{sports.map((sport, i) => (
