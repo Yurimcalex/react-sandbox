@@ -12,6 +12,7 @@ import FormWithDelay from './FormWithDelay.jsx';
 import FavoriteCarForm from './FavoriteCarForm.jsx';
 import MovingSquare from './MovingSquare.jsx';
 import EmployeeForm from './EmployeeForm.jsx';
+import SportList from './SportList.jsx';
 
 export default function AI() {
 	return (
@@ -41,6 +42,8 @@ export default function AI() {
 
 			<MovingSquare />
 			<EmployeeForm />
+
+			<SportList />
 		</div>
 	);
 }
