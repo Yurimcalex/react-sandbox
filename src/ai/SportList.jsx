@@ -39,9 +39,9 @@ export default function SportList() {
 				<button onClick={handleAddAtPos1}>Add at position 1</button>
 			</div>
 			<ul>
-				{sports.map(sport => (
+				{sports.map((sport, i) => (
 					<li key={sport.id}>
-						{sport.name}
+						#{i} - {sport.name}
 						<button onClick={() => handleDeleteSport(sport.id)}>Delete</button>
 					</li>
 				))}
