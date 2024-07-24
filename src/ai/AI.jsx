@@ -14,11 +14,12 @@ import MovingSquare from './MovingSquare.jsx';
 import EmployeeForm from './EmployeeForm.jsx';
 import SportList from './SportList.jsx';
 import ShapesRacing from './ShapesRacing.jsx';
+import Countres from './Counters.jsx';
 
 export default function AI() {
 	return (
 		<div>
-			<ShapesRacing />
+			<Countres />
 		</div>
 	);
 }
