@@ -12,10 +12,10 @@ export default function ShapesRacing() {
 	const handleShapesRace = () => {
 		setShapes(shapes.map(shape => {
 			if (shape.type === 'circle') {
-				return { ...shape, y: shape.y + 5 };
+				return { ...shape, y: shape.y + random(1, 5) };
 			}
 			if (shape.type === 'square') {
-				return { ...shape, y: shape.y + 3 }; 
+				return { ...shape, y: shape.y + random(1, 3) }; 
 			}
 			return shape;
 		}));
@@ -45,4 +45,10 @@ export default function ShapesRacing() {
 			<button onClick={handleShapesRace}>Go!</button>
 		</div>
 	);
+}
+
+
+function random(min, max) {
+  let rand = min - 0.5 + Math.random() * (max - min + 1);
+  return Math.round(rand);
 }
