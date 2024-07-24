@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
 const initialSports = [
-	{ id: 1, name: 'football' },
-	{ id: 2, name: 'gymnastics' }
+	{ id: 1, name: 'football', checked: false },
+	{ id: 2, name: 'gymnastics', checked: false }
 ];
 
 export default function SportList() {
@@ -33,6 +33,16 @@ export default function SportList() {
 		setSports([...sports].reverse());
 	};
 
+	const handleCheckSport = (id) => {
+		setSports(sports.map(sport => {
+			if (sport.id === id) {
+				return { ...sport, checked: !sport.checked};
+			} else {
+				return sport;
+			}
+		}));
+	};
+
 	return (
 		<div>
 			<div>
@@ -46,8 +56,9 @@ export default function SportList() {
 			<ul>
 				{sports.map((sport, i) => (
 					<li key={sport.id}>
-						#{i} - {sport.name}
+						#{i} - {sport.name} {sport.checked ? 'yes': 'no'}
 						<button onClick={() => handleDeleteSport(sport.id)}>Delete</button>
+						<input type="checkbox" value={sport.checked} onChange={() => handleCheckSport(sport.id)} />
 					</li>
 				))}
 			</ul>		
