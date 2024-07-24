@@ -13,37 +13,12 @@ import FavoriteCarForm from './FavoriteCarForm.jsx';
 import MovingSquare from './MovingSquare.jsx';
 import EmployeeForm from './EmployeeForm.jsx';
 import SportList from './SportList.jsx';
+import ShapesRacing from './ShapesRacing.jsx';
 
 export default function AI() {
 	return (
 		<div>
-			<Message text={"Some really funny message"}/>
-			<div>
-				<Button text={"Some interesting text..."} />
-				<Button text={"Another interesting text..."} />
-			</div>
-			<Controls />
-			<ClickCatcher>
-				<Toolbar 
-					onPlaySong={() => console.log('the song is playing!')}
-					onTurnOffLight={() => console.log('the light is turned off')}
-				/>
-			</ClickCatcher>
-
-			<ParentAdditionalTask />
-			<EmptyForm />
-
-			<PhraseGallery />
-			<CounterWithInput />
-			<ExperimentalCounter />
-
-			<FormWithDelay />
-			<FavoriteCarForm />
-
-			<MovingSquare />
-			<EmployeeForm />
-
-			<SportList />
+			<ShapesRacing />
 		</div>
 	);
 }
