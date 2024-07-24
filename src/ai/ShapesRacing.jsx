@@ -9,6 +9,18 @@ let initialShapes = [
 export default function ShapesRacing() {
 	const [shapes, setShapes] = useState(initialShapes);
 
+	const handleShapesRace = () => {
+		setShapes(shapes.map(shape => {
+			if (shape.type === 'circle') {
+				return { ...shape, y: shape.y + 5 };
+			}
+			if (shape.type === 'square') {
+				return { ...shape, y: shape.y + 3 }; 
+			}
+			return shape;
+		}));
+	};
+
 	return (
 		<div>
 			<div style={{
@@ -17,7 +29,7 @@ export default function ShapesRacing() {
 				background: 'lightgray'
 			}}>
 				{shapes.map(shape => (
-					<div style={{
+					<div key={shape.id} style={{
 						position: 'absolute',
 						left: `${shape.x}px`,
 						top: `${shape.y}px`,
@@ -30,7 +42,7 @@ export default function ShapesRacing() {
 					</div>
 				))}
 			</div>
-			<button>Go!</button>
+			<button onClick={handleShapesRace}>Go!</button>
 		</div>
 	);
 }
