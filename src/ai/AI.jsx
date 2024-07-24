@@ -19,7 +19,7 @@ import Countres from './Counters.jsx';
 export default function AI() {
 	return (
 		<div>
-			<Countres />
+			<SportList />
 		</div>
 	);
 }

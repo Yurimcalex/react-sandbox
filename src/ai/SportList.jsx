@@ -15,6 +15,16 @@ export default function SportList() {
 		setSportName('');
 	};
 
+	const handleAddAtPos1 = () => {
+		if (!sportName) return;
+		setSports([
+			...sports.slice(0, 1),
+			{ id: getId(), name: sportName },
+			...sports.slice(1)
+		]);
+		setSportName('');
+	};
+
 	const handleDeleteSport = (id) => {
 		setSports(sports.filter(sport => sport.id !== id));
 	};
@@ -26,6 +36,7 @@ export default function SportList() {
 					Add sport: <input type="text" value={sportName} onChange={(e) => setSportName(e.target.value)} />
 				</label>
 				<button onClick={handleAddSport}>Add</button>
+				<button onClick={handleAddAtPos1}>Add at position 1</button>
 			</div>
 			<ul>
 				{sports.map(sport => (
