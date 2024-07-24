@@ -15,6 +15,10 @@ export default function SportList() {
 		setSportName('');
 	};
 
+	const handleDeleteSport = (id) => {
+		setSports(sports.filter(sport => sport.id !== id));
+	};
+
 	return (
 		<div>
 			<div>
@@ -24,7 +28,12 @@ export default function SportList() {
 				<button onClick={handleAddSport}>Add</button>
 			</div>
 			<ul>
-				{sports.map(sport => <li key={sport.id}>{sport.name}</li>)}
+				{sports.map(sport => (
+					<li key={sport.id}>
+						{sport.name}
+						<button onClick={() => handleDeleteSport(sport.id)}>Delete</button>
+					</li>
+				))}
 			</ul>		
 		</div>
 	);
