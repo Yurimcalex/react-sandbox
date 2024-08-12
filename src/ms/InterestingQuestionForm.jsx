@@ -1,13 +1,28 @@
+const statuses = [
+	'empty',
+	'submitting',
+	'error',
+	'success',
+	'typing'
+];
+
+
 export default function InterestingQuestionForm() {
 	return (
 		<div>
 			<h3>An interesting question</h3>
-			<Form />
+			{statuses.map(status => (
+				<div>
+					<p>Form status={status}</p>
+					<Form status={status} />
+					<hr />
+				</div>
+			))}
 		</div>
 	);
 }
 
-// status: empty | submitting | error | success
+
 function Form({ status = 'error' }) {
 	if (status === 'success') {
 		return <h1>Great choice!</h1>
