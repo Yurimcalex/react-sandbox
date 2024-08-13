@@ -20,6 +20,7 @@ export default function InterestingQuestionForm() {
 	return (
 		<div>
 			<h3>An interesting question</h3>
+			<p>{status}</p>
 			<Form
 				status={status}
 				answer={answer}
