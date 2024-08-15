@@ -5,12 +5,13 @@ import InfoPanel from './InfoPanel.jsx';
 import TravelSnackSurvey from './TravelSnackSurvey.jsx';
 import TravelPlan from './TravelPlan.jsx';
 import MovieHeroes from './MovieHeroes.jsx';
-import FancyCounter from './FancyCounter.jsx'
+import FancyCounter from './FancyCounter.jsx';
+import ScoreBoard from './ScoreBoard.jsx';
 
 export default function MS() {
 	return (
 		<div>
-			<FancyCounter />
+			<ScoreBoard />
 		</div>
 	);
 }
