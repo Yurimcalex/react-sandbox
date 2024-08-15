@@ -1,13 +1,23 @@
 import { useState } from 'react';
 
 export default function MovieHeroes() {
+	const [activeIndex, setActiveIndex] = useState(0);
+
 	return (
 		<div>
-			<Panel title="Yuri Boyka">
+			<Panel 
+				title="Yuri Boyka" 
+				isActive={activeIndex === 0}
+				onShow={() => setActiveIndex(0)}
+			>
 				<p>It's a very cool fighter.</p>
 			</Panel>
 
-			<Panel title="Superman">
+			<Panel
+				title="Superman"
+				isActive={activeIndex === 1}
+				onShow={() => setActiveIndex(1)}
+			>
 				<p>He can fly!</p>
 			</Panel>
 		</div>
@@ -15,9 +25,7 @@ export default function MovieHeroes() {
 }
 
 
-function Panel({ title, children }) {
-	const [isActive, setIsActive] = useState(false);
-
+function Panel({ title, children, isActive, onShow }) {
 
 	return (
 		<div>
@@ -31,7 +39,7 @@ function Panel({ title, children }) {
 						</>
 					)
 				: (
-						<button onClick={() => setIsActive(true)}>show</button>
+						<button onClick={onShow}>show</button>
 					)
 			}
 		</div>
