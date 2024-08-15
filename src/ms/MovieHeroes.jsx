@@ -1,25 +1,33 @@
 import { useState } from 'react';
 
+const data = [
+	{
+		id: 1,
+		name: 'Yuri Boyka',
+		text: 'It is a very cool fighter.'
+	},
+	{
+		id: 2,
+		name: 'Superman',
+		text: 'He can fly!'
+	}
+];
+
 export default function MovieHeroes() {
-	const [activeIndex, setActiveIndex] = useState(0);
+	const [activeIndex, setActiveIndex] = useState(data[0].id);
 
 	return (
 		<div>
-			<Panel 
-				title="Yuri Boyka" 
-				isActive={activeIndex === 0}
-				onShow={() => setActiveIndex(0)}
-			>
-				<p>It's a very cool fighter.</p>
-			</Panel>
-
-			<Panel
-				title="Superman"
-				isActive={activeIndex === 1}
-				onShow={() => setActiveIndex(1)}
-			>
-				<p>He can fly!</p>
-			</Panel>
+			{data.map(hero => (
+				<Panel
+					key={hero.id}
+					title={hero.name}
+					isActive={activeIndex == hero.id}
+					onShow={() => setActiveIndex(hero.id)}
+				>
+					<p>{hero.text}</p>
+				</Panel>
+			))}
 		</div>
 	);
 }
