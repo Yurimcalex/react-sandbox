@@ -5,11 +5,12 @@ import InfoPanel from './InfoPanel.jsx';
 import TravelSnackSurvey from './TravelSnackSurvey.jsx';
 import TravelPlan from './TravelPlan.jsx';
 import MovieHeroes from './MovieHeroes.jsx';
+import FancyCounter from './FancyCounter.jsx'
 
 export default function MS() {
 	return (
 		<div>
-			<MovieHeroes />
+			<FancyCounter />
 		</div>
 	);
 }
