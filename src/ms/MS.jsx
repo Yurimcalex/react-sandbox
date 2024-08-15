@@ -1,9 +1,10 @@
 import InterestingQuestionForm from './InterestingQuestionForm.jsx';
+import FeedbackForm from './FeedbackForm.jsx';
 
 export default function MS() {
 	return (
 		<div>
-			<InterestingQuestionForm />
+			<FeedbackForm />
 		</div>
 	);
 }
