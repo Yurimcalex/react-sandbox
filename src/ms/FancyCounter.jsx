@@ -5,7 +5,7 @@ export default function FancyCounter() {
 
 	return (
 		<div>
-			{isFancy ? <Counter color="lightgray" /> : <Counter />}
+			{isFancy ? <div><Counter color="lightgray" /></div> : <Counter />}
 			<label>
 				<span>enable fancy</span>
 				<input type="checkbox" checked={isFancy} onChange={() => setIsFancy(!isFancy)} />
