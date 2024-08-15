@@ -7,11 +7,12 @@ import TravelPlan from './TravelPlan.jsx';
 import MovieHeroes from './MovieHeroes.jsx';
 import FancyCounter from './FancyCounter.jsx';
 import ScoreBoard from './ScoreBoard.jsx';
+import SmallChat from './SmallChat.jsx';
 
 export default function MS() {
 	return (
 		<div>
-			<ScoreBoard />
+			<SmallChat />
 		</div>
 	);
 }
