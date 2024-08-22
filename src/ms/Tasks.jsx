@@ -11,22 +11,23 @@ const initialTasks = [
 export default function Tasks() {
 	const [tasks, setTasks] = useState(initialTasks);
 	
-
 	const handleTaskAdd = (text) => {
 		setTasks([...tasks, { id: nextId++, text, done: false }]);
 	};
+
+	const handleTaskDelete = (id) => setTasks(tasks.filter(task => task.id !== id));
 
 	return (
 		<div>
 			<h1>Tasks</h1>
 			<AddTask onTaskAdd={handleTaskAdd} />
-			<TaskList tasks={tasks} />
+			<TaskList tasks={tasks} onTaskDelete={handleTaskDelete} />
 		</div>
 	);
 }
 
 
-function TaskList({ tasks }) {
+function TaskList({ tasks, onTaskDelete }) {
 	return (
 		<div>
 			{tasks.map(task => (
@@ -34,7 +35,7 @@ function TaskList({ tasks }) {
 					<input type="checkbox" checked={task.done} />
 					{task.text}
 					<button>Edit</button>
-					<button>Delele</button>
+					<button onClick={() => onTaskDelete(task.id)}>Delele</button>
 				</div>
 			))}
 		</div>
