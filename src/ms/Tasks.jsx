@@ -52,16 +52,21 @@ export default function Tasks() {
 
 function Task({ task, onTaskDelete, onTaskEdit, onTaskDone }) {
 	const [isEditing, setIsEditing] = useState(false);
-	const [text, setText] = useState('');
+	const [text, setText] = useState(task.text);
+
+	const handleSaveTask = (id, text) => {
+		onTaskEdit(id, text);
+		setIsEditing(false);
+	};
 
 	return (
 		<div>
 			<input type="checkbox" checked={task.done} onChange={() => onTaskDone(task.id)} />
 
-			{isEditing ? <input type="text" onChange={(e) => setText(e.target.value)} /> : task.text}
+			{isEditing ? <input type="text" value={text} onChange={(e) => setText(e.target.value)} /> : task.text}
 
 			{isEditing
-				? <button onClick={() => onTaskEdit(task.id, text)}>Save</button>
+				? <button onClick={() => handleSaveTask(task.id, text)}>Save</button>
 				: <button onClick={() => setIsEditing(!isEditing)}>Edit</button>}
 			
 			<button onClick={() => onTaskDelete(task.id)}>Delele</button>
