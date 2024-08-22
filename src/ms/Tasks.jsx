@@ -26,23 +26,37 @@ export default function Tasks() {
 		}));
 	};
 
+	const handleTaskDone = (id) => {
+		setTasks(tasks.map((task) => {
+			if (task.id === id) {
+				return { ...task, done: !task.done };
+			}
+			return task;
+		}));
+	};
+
 	return (
 		<div>
 			<h1>Tasks</h1>
 			<AddTask onTaskAdd={handleTaskAdd} />
-			<TaskList tasks={tasks} handleTaskDelete={handleTaskDelete} handleTaskEdit={handleTaskEdit} />
+			<TaskList 
+				tasks={tasks}
+				handleTaskDelete={handleTaskDelete}
+				handleTaskEdit={handleTaskEdit}
+				handleTaskDone={handleTaskDone}
+			/>
 		</div>
 	);
 }
 
 
-function Task({ task, onTaskDelete, onTaskEdit }) {
+function Task({ task, onTaskDelete, onTaskEdit, onTaskDone }) {
 	const [isEditing, setIsEditing] = useState(false);
 	const [text, setText] = useState('');
 
 	return (
 		<div>
-			<input type="checkbox" checked={task.done} />
+			<input type="checkbox" checked={task.done} onChange={() => onTaskDone(task.id)} />
 
 			{isEditing ? <input type="text" onChange={(e) => setText(e.target.value)} /> : task.text}
 
@@ -56,10 +70,16 @@ function Task({ task, onTaskDelete, onTaskEdit }) {
 }
 
 
-function TaskList({ tasks, handleTaskDelete, handleTaskEdit }) {
+function TaskList({ tasks, handleTaskDelete, handleTaskEdit, handleTaskDone }) {
 	return (
 		<div>
-			{tasks.map(task => <Task key={task.id} task={task} onTaskDelete={handleTaskDelete} onTaskEdit={handleTaskEdit} />)}
+			{tasks.map(task => 
+				<Task 
+					key={task.id}
+					task={task}
+					onTaskDelete={handleTaskDelete}
+					onTaskEdit={handleTaskEdit}
+					onTaskDone={handleTaskDone} />)}
 		</div>
 	);
 }
