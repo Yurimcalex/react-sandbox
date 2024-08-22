@@ -20,7 +20,7 @@ export default function Tasks() {
 	const handleTaskEdit = (id, text) => {
 		setTasks(tasks.map((task) => {
 			if (task.id === id) {
-				return { ...tasks, text };
+				return { ...task, text };
 			}
 			return task;
 		}));
