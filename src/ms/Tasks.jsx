@@ -9,12 +9,21 @@ const initialTasks = [
 
 
 export default function Tasks() {
+	const [tasks, setTasks] = useState(initialTasks);
+	const [text, setText] = useState('');
+
+	const handleTaskAdd = (text) => {
+		setTasks([...tasks, { id: nextId++, text, done: false }]);
+	};
+
+	console.log(tasks);
+
 	return (
 		<div>
 			<h1>Tasks</h1>
 			<div>
-				<input type="text" />
-				<button>Add</button>
+				<input type="text" onChange={(e) => setText(e.target.value)} />
+				<button onClick={() => handleTaskAdd(text)}>Add</button>
 			</div>
 			
 			<div>
