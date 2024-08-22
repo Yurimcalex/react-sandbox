@@ -9,30 +9,35 @@ const initialTasks = [
 
 
 export default function Tasks() {
-	const [tasks, setTasks] = useState(initialTasks);
+	const [tasks, dispatch] = useReducer(tasksReducer, initialTasks);
 	
 	const handleTaskAdd = (text) => {
-		setTasks([...tasks, { id: nextId++, text, done: false }]);
+		dispatch({
+			type: 'task/added',
+			text
+		});
 	};
 
-	const handleTaskDelete = (id) => setTasks(tasks.filter(task => task.id !== id));
+	const handleTaskDelete = (id) => {
+		dispatch({
+			type: 'task/deleted',
+			id
+		});
+	};
 
 	const handleTaskEdit = (id, text) => {
-		setTasks(tasks.map((task) => {
-			if (task.id === id) {
-				return { ...task, text };
-			}
-			return task;
-		}));
+		dispatch({
+			type: 'task/edited',
+			id,
+			text
+		});
 	};
 
 	const handleTaskDone = (id) => {
-		setTasks(tasks.map((task) => {
-			if (task.id === id) {
-				return { ...task, done: !task.done };
-			}
-			return task;
-		}));
+		dispatch({
+			type: 'task/toggled',
+			id
+		});
 	};
 
 	return (
@@ -117,7 +122,7 @@ function tasksReducer(tasks, action) {
 		case 'task/edited': {
 			return tasks.map((task) => {
 				if (task.id === action.id) {
-					return { ...task, text };
+					return { ...task, text: action.text };
 				}
 				return task;
 			});
