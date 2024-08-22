@@ -10,24 +10,19 @@ const initialTasks = [
 
 export default function Tasks() {
 	const [tasks, setTasks] = useState(initialTasks);
-	const [text, setText] = useState('');
+	
 
 	const handleTaskAdd = (text) => {
 		setTasks([...tasks, { id: nextId++, text, done: false }]);
 	};
 
-	console.log(tasks);
-
 	return (
 		<div>
 			<h1>Tasks</h1>
-			<div>
-				<input type="text" onChange={(e) => setText(e.target.value)} />
-				<button onClick={() => handleTaskAdd(text)}>Add</button>
-			</div>
+			<AddTask onTaskAdd={handleTaskAdd} />
 			
 			<div>
-				{initialTasks.map(task => (
+				{tasks.map(task => (
 					<div key={task.id}>
 						<input type="checkbox" checked={task.done} />
 						{task.text}
@@ -36,6 +31,17 @@ export default function Tasks() {
 					</div>
 				))}
 			</div>
+		</div>
+	);
+}
+
+
+function AddTask({ onTaskAdd }) {
+	const [text, setText] = useState('');
+	return (
+		<div>
+			<input type="text" onChange={(e) => setText(e.target.value)} />
+			<button onClick={() => onTaskAdd(text)}>Add</button>
 		</div>
 	);
 }
