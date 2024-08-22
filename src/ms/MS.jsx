@@ -8,11 +8,13 @@ import MovieHeroes from './MovieHeroes.jsx';
 import FancyCounter from './FancyCounter.jsx';
 import ScoreBoard from './ScoreBoard.jsx';
 import SmallChat from './SmallChat.jsx';
+import Tasks from './Tasks.jsx';
+
 
 export default function MS() {
 	return (
 		<div>
-			<SmallChat />
+			<Tasks />
 		</div>
 	);
 }
