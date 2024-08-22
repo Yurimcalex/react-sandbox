@@ -97,10 +97,15 @@ function TaskList({ tasks, handleTaskDelete, handleTaskEdit, handleTaskDone }) {
 
 function AddTask({ onTaskAdd }) {
 	const [text, setText] = useState('');
+	const handleButtonClick = () => {
+		onTaskAdd(text);
+		setText('');
+	};
+
 	return (
 		<div>
-			<input type="text" onChange={(e) => setText(e.target.value)} />
-			<button onClick={() => onTaskAdd(text)}>Add</button>
+			<input type="text" value={text} onChange={(e) => setText(e.target.value)} />
+			<button onClick={handleButtonClick}>Add</button>
 		</div>
 	);
 }
