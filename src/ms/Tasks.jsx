@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useReducer } from 'react';
 
 let nextId = 3;
 const initialTasks = [
@@ -98,4 +98,38 @@ function AddTask({ onTaskAdd }) {
 			<button onClick={() => onTaskAdd(text)}>Add</button>
 		</div>
 	);
+}
+
+
+function tasksReducer(tasks, action) {
+	switch(action.type) {
+		case 'task/added': {
+			return [ 
+				...tasks,
+				{ id: nextId++, text: action.text, done: false } 
+			];
+		}
+
+		case 'task/deleted': {
+			return tasks.filter(task => task.id !== action.id);
+		}
+
+		case 'task/edited': {
+			return tasks.map((task) => {
+				if (task.id === action.id) {
+					return { ...task, text };
+				}
+				return task;
+			});
+		}
+
+		case 'task/toggled': {
+			return tasks.map((task) => {
+				if (task.id === action.id) {
+					return { ...task, done: !task.done };
+				}
+				return task;
+			});
+		}
+	}
 }
