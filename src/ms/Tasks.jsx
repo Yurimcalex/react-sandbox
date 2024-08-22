@@ -20,17 +20,23 @@ export default function Tasks() {
 		<div>
 			<h1>Tasks</h1>
 			<AddTask onTaskAdd={handleTaskAdd} />
-			
-			<div>
-				{tasks.map(task => (
-					<div key={task.id}>
-						<input type="checkbox" checked={task.done} />
-						{task.text}
-						<button>Edit</button>
-						<button>Delele</button>
-					</div>
-				))}
-			</div>
+			<TaskList tasks={tasks} />
+		</div>
+	);
+}
+
+
+function TaskList({ tasks }) {
+	return (
+		<div>
+			{tasks.map(task => (
+				<div key={task.id}>
+					<input type="checkbox" checked={task.done} />
+					{task.text}
+					<button>Edit</button>
+					<button>Delele</button>
+				</div>
+			))}
 		</div>
 	);
 }
